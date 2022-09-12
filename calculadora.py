@@ -169,17 +169,6 @@ while not endprogram:
                         for elemento in fila:
                             print(elemento, end=" ")
                         print("]")
-            #Division de matrices
-            #elif o_matriz == "D" or o_matriz == "d":
-                #os.system("cls")
-                #divi1 = float(input("""Introduzca el dividendo """))
-                #divi2 = float(input("""Introduzca el divisor """))
-                #if divi2 == 0:
-                  #  print("Por favor introduzca un valor distinto de 0")
-                 #   endprogram = False
-                #else:
-                    #divis = divi1 / divi2
-                    #print("El resultado de su resta es: {}".format(divis))
     #Salir del programa
     elif operacion =="Q" or operacion == "q":
         endprogram = True
