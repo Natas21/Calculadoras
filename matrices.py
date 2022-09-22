@@ -1,3 +1,5 @@
+import os
+import readchar
 
 c1=1
 c2=1
@@ -17,6 +19,7 @@ class matrices:
         if len(self.matriz1) == len(self.matriz2):
             for i in range(len(self.matriz1)):
                 self.matriz3.append((self.matriz1[i] + self.matriz2[i]))
+            print(self.matriz3)
             return self.matriz3
         else:
             error = print("No se puede realizar la suma porque no son de la misma longitud")
@@ -24,19 +27,19 @@ class matrices:
 
 filas1 = int(input("Filas que tendra su matriz: "))
 columnas1 = int(input("Columnas que tendra su matriz: "))
-longitud1 = filas1 * columnas1
-resultado1 = matrices(longitud1)
-while c1 <= longitud1:
+longitud = filas1 * columnas1
+resultado = matrices(longitud)
+while c1 <= longitud:
     c1 += 1
-    m1 = resultado1.agregar1(n1= float(input("Valor que desea agregar: ")))
+    m1 = resultado.agregar1(n1= float(input("Valor que desea agregar: ")))
 filas2 = int(input("Filas que tendra su matriz: "))
 columnas2 = int(input("Columnas que tendra su matriz: "))
-longitud2 = filas2*columnas2
-resultado2 = matrices(longitud2)
-while c2 <= longitud2:
+longitud = filas2*columnas2
+resultado2 = matrices(longitud)
+while c2 <= longitud:
     c2 +=1
-    m2 = resultado2.agregar2(n2=float(input("Valor que desea agregar: ")))
-longitud3 = longitud1
+    m2 = resultado.agregar2(n2=float(input("Valor que desea agregar: ")))
+longitud3 = longitud
 resultado3 = matrices(longitud3)
-m3 = resultado3.Sum_M()
+m3 = resultado.Sum_M()
 print(m1,m2,m3)
