@@ -9,6 +9,8 @@ class matrices:
         self.matriz1 = []
         self.matriz2 = []
         self.matriz3 = []
+        self.matriz4 = []
+        self.matriz5 = []
     def agregar1 (self, n1):
         self.matriz1.append(n1)
         return self.matriz1
@@ -38,7 +40,7 @@ class matrices:
         else:
             for i in range (self.filas1):
                 for j in range (self.columnas2):
-                    self.matriz3.append(((self.matriz1[i])*(self.matriz2[j]))+(self.matriz1[j])*(self.matriz2[i]))
+                    self.matriz3.append((self.matriz1[j])*(self.matriz2[i]))
             return self.matriz3
 def menu_mat ():
     c1 = 1
