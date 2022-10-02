@@ -1,4 +1,5 @@
 opciones_mat = ["+","-","*"]
+valor_invalidado = "Introduzca un valor valido."
 class matrices:
     def __init__(self,filas1,filas2,columnas1,columnas2):
         self.filas1 = filas1
@@ -41,44 +42,47 @@ class matrices:
                 self.matriz5.append(self.matriz3[i] + self.matriz4[i])
             return self.matriz5
 def menu_mat ():
-    c1 = 0
-    c2 = 0
-    resultado = matrices(filas1 = int(input("Filas que tendra su matriz #1: ")), columnas1 = int(input("Columnas que tendra su matriz#1: ")), filas2 = int(input("Filas de matriz #2: ")), columnas2 = int(input("Columnas de matriz #2: ")))
-    longitud1 = resultado.filas1*resultado.columnas1
-    longitud2 = resultado.filas2*resultado.columnas2
-    opm = input("Operacion a realizar: ")
-    if opm not in opciones_mat:
-        print("Por favor elija una opcion valida ")
-    elif opm == "+":
-        if resultado.filas1 == resultado.filas2 and resultado.columnas1 == resultado.columnas2:
+    try:
+        c1 = 0
+        c2 = 0
+        resultado = matrices(filas1 = int(input("Filas que tendra su matriz #1: ")), columnas1 = int(input("Columnas que tendra su matriz#1: ")), filas2 = int(input("Filas de matriz #2: ")), columnas2 = int(input("Columnas de matriz #2: ")))
+        longitud1 = resultado.filas1*resultado.columnas1
+        longitud2 = resultado.filas2*resultado.columnas2
+        opm = input("Operacion a realizar: ")
+        if opm not in opciones_mat:
+            print("Por favor elija una opcion valida ")
+        elif opm == "+":
+            if resultado.filas1 == resultado.filas2 and resultado.columnas1 == resultado.columnas2:
+                while c1 < longitud1:
+                    m1 = resultado.agregar1(n1=float(input("Valor que desea agregar a matriz 1: ")))
+                    c1 += 1
+                while c2 < longitud2:
+                    m2 = resultado.agregar2(n2=float(input("Valor que desea agregar a matriz 2: ")))
+                    c2 += 1
+                m3 = resultado.Sum_M()
+                print(m1," + ",m2," = ",m3)
+            else:
+                print("No se puede realizar la operacion ya que las matrices no coinciden en dimensiones")
+        elif opm == "-":
+            if resultado.filas1 == resultado.filas2 and resultado.columnas1 == resultado.columnas2:
+                while c1 < longitud1:
+                    m1 = resultado.agregar1(n1=float(input("Valor que desea agregar a matriz 1: ")))
+                    c1 += 1
+                while c2 < longitud2:
+                    m2 = resultado.agregar2(n2=float(input("Valor que desea agregar a matriz 2: ")))
+                    c2 += 1
+                m3 = resultado.Res_M()
+                print(m1," - ",m2," = ",m3)
+            else:
+                print("No se puede realizar la operacion ya que las matrices no coinciden en dimensiones")
+        elif opm == "*":
             while c1 < longitud1:
                 m1 = resultado.agregar1(n1=float(input("Valor que desea agregar a matriz 1: ")))
                 c1 += 1
             while c2 < longitud2:
                 m2 = resultado.agregar2(n2=float(input("Valor que desea agregar a matriz 2: ")))
                 c2 += 1
-            m3 = resultado.Sum_M()
-            print(m1," + ",m2," = ",m3)
-        else:
-            print("No se puede realizar la operacion ya que las matrices no coinciden en dimensiones")
-    elif opm == "-":
-        if resultado.filas1 == resultado.filas2 and resultado.columnas1 == resultado.columnas2:
-            while c1 < longitud1:
-                m1 = resultado.agregar1(n1=float(input("Valor que desea agregar a matriz 1: ")))
-                c1 += 1
-            while c2 < longitud2:
-                m2 = resultado.agregar2(n2=float(input("Valor que desea agregar a matriz 2: ")))
-                c2 += 1
-            m3 = resultado.Res_M()
-            print(m1," - ",m2," = ",m3)
-        else:
-            print("No se puede realizar la operacion ya que las matrices no coinciden en dimensiones")
-    elif opm == "*":
-        while c1 < longitud1:
-            m1 = resultado.agregar1(n1=float(input("Valor que desea agregar a matriz 1: ")))
-            c1 += 1
-        while c2 < longitud2:
-            m2 = resultado.agregar2(n2=float(input("Valor que desea agregar a matriz 2: ")))
-            c2 += 1
-        m3 = resultado.Mult_M()
-        print(m1, " * ", m2, " = ", m3)
+            m3 = resultado.Mult_M()
+            print(m1, " * ", m2, " = ", m3)
+    except:
+        print(valor_invalidado)

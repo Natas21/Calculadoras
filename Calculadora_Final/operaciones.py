@@ -31,20 +31,23 @@ while True:
     elif op == "M":
         m.menu_mat()
     else:
-        n1 = float(input("Introduzca el primer numero "))
-        n2 = float(input("Introduzca el segundo numero "))
-        if op == "+":
-            resultado = operaciones_norm(n1, n2)
-            print(n1, op, n2, " = ",resultado.sumas())
-        elif op == "-":
-            resultado = operaciones_norm(n1, n2)
-            print(n1, op, n2, " = ",resultado.restas())
-        elif op == "*":
-            resultado = operaciones_norm(n1, n2)
-            print(n1, op, n2, " = ",resultado.multiplicacion())
-        elif op == "/":
-            resultado = operaciones_norm(n1, n2)
-            if n2 == 0:
-                print("Cualquier numero entre 0 es indefinido")
-            else:
-                print(n1, op, n2, " = ",resultado.division())
+        try:
+            n1 = float(input("Introduzca el primer numero "))
+            n2 = float(input("Introduzca el segundo numero "))
+            if op == "+":
+                resultado = operaciones_norm(n1, n2)
+                print(n1, op, n2, " = ",resultado.sumas())
+            elif op == "-":
+                resultado = operaciones_norm(n1, n2)
+                print(n1, op, n2, " = ",resultado.restas())
+            elif op == "*":
+                resultado = operaciones_norm(n1, n2)
+                print(n1, op, n2, " = ",resultado.multiplicacion())
+            elif op == "/":
+                resultado = operaciones_norm(n1, n2)
+                if n2 == 0:
+                    print("Cualquier numero entre 0 es indefinido")
+                else:
+                    print(n1, op, n2, " = ",resultado.division())
+        except:
+            print("Porfavor introduzca valores validos.")
